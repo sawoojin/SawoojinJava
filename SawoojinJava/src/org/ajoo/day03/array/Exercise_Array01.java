@@ -2,7 +2,7 @@ package org.ajoo.day03.array;
 
 import java.util.Scanner;
 
-public class Exercise_Array1 {
+public class Exercise_Array01 {
 
 	public static void main(String[] args) {
 		// 배열의 length 필드를 이용하여 배열 크기만큼 정수를 입력받고 평균을 구하는 프로그램 작성.
@@ -15,6 +15,7 @@ public class Exercise_Array1 {
 			arrs[i] = sc.nextInt();
 			sum += arrs[i];
 		} 
+		sc.close();
 		System.out.println("평균은 " + sum/arrs.length + "입니다.");
 		
 		
