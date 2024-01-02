@@ -6,7 +6,9 @@ public class BlackJack {
 	public int aiWin;
 	public int playerWin;
 	
-	public BlackJack() {}
+	public BlackJack() {
+		
+	}
 	
 	public BlackJack(int aiMoney, int playerMoney, int aiWin, int playerWin) {
 		this.aiMoney = aiMoney;
