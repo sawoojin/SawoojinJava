@@ -29,6 +29,14 @@ public class ManageBlackJack {
 		System.out.println("남은 컴퓨터 금액 : " + BJ.aiMoney);
 		System.out.println("컴퓨터 승리 횟수 : " + BJ.aiWin);
 		System.out.println("플레이어 승리 횟수 : " + BJ.playerWin);
+		if(BJ.playerMoney < 1) {
+			System.out.println("플레이어가 파산했습니다!");
+			return mainMenu();
+		}
+		if(BJ.aiMoney < 1 ) {
+			System.out.println("컴퓨터가 파산했습니다!");
+			return mainMenu();
+		}
 		System.out.print("배팅 금액 입력 : ");
 		int betting = sc.nextInt();
 		if(betting == 0) {
@@ -91,9 +99,9 @@ public class ManageBlackJack {
 					if(BJ.aiTotal < 15) {
 						int aiCardValue = aiCard.value;
 						BJ.aiTotal += aiCardValue;
+						System.out.println("AI가 뽑은 카드: " + aiCardValue);
+						System.out.println("현재 AI의 합: " + BJ.aiTotal);
 						if(BJ.aiTotal > 21) {
-							System.out.println("AI가 뽑은 카드: " + aiCardValue);
-							System.out.println("현재 AI의 합: " + BJ.aiTotal);
 							System.out.println("AI Burst! 플레이어가 승리합니다.");
 							BJ.aiMoney -= betting;
 							BJ.playerMoney += betting;
